@@ -6,5 +6,24 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Brand -->
+    <color name="primary">#185FA5</color>
+    <color name="primary_light">#E6F1FB</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_screen">#F4F3EE</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_error">#FCEBEB</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#6B6B6B</color>
+
+    <!-- Border -->
+    <color name="border">#DEDCD3</color>
+
+    <!-- Semantic -->
+    <color name="error">#A32D2D</color>
+    <color name="success">#0F6E56</color>
 </resources>

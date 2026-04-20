@@ -14,7 +14,9 @@ import com.example.gradues.data.db.DatabaseHelper
 import com.example.gradues.data.entities.OpcionMenu
 import com.example.gradues.data.repository.AuthRepository
 import com.example.gradues.databinding.ActivityLoginBinding
-import com.example.gradues.ui.dashboard.DashboardDocenteActivity
+import com.example.gradues.ui.dashboard.docente.DashboardDocenteActivity
+import com.example.gradues.ui.Alumno.DashboardAlumnoActivity
+
 import com.example.gradues.utils.SessionManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -101,6 +103,12 @@ class LoginActivity : AppCompatActivity() {
                             session.guardarSesion(id, nombre, rol)
                             if (rol == "Docente") {
                                 val intent = Intent(this, DashboardDocenteActivity::class.java)
+                                intent.putExtra("NOMBRE", nombre)
+                                intent.putExtra("ROL", rol)
+                                startActivity(intent)
+                                finish()
+                            } else if (rol == "Alumno") {
+                                val intent = Intent(this, DashboardAlumnoActivity::class.java)
                                 intent.putExtra("NOMBRE", nombre)
                                 intent.putExtra("ROL", rol)
                                 startActivity(intent)

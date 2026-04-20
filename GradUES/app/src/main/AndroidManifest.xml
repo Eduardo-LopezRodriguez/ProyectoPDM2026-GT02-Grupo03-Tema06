@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GradUES">
         <activity
-            android:name=".ui.dashboard.DashboardDocenteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.DashboardDocenteActivity"
+            android:name=".ui.dashboard.docente.DashboardDocenteActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
@@ -28,6 +25,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.dashboard.docente.GruposActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.docente.CursosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Alumno.DashboardAlumnoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

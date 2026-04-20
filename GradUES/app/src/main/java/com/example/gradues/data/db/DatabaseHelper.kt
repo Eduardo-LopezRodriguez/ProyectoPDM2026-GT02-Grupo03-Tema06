@@ -40,6 +40,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "gradues.db",
         db.execSQL("INSERT OR IGNORE INTO Roles VALUES ('Docente', 'Docente asesor / administrador')")
         db.execSQL("INSERT OR IGNORE INTO Roles VALUES ('Alumno', 'Estudiante de la UES')")
 
+
+
         // Usuarios
         db.execSQL("INSERT OR IGNORE INTO Usuario VALUES ('CG24001', 'Carlos García', '1234', 'Docente')")
         db.execSQL("INSERT OR IGNORE INTO Usuario VALUES ('RR24001', 'Rosa Ramos', '4567', 'Alumno')")

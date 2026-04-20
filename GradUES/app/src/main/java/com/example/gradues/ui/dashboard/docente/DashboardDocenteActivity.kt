@@ -1,12 +1,14 @@
-package com.example.gradues.ui.dashboard
+package com.example.gradues.ui.dashboard.docente
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gradues.databinding.ActivityDashboardDocenteBinding
+import com.example.gradues.ui.login.LoginActivity
 import com.example.gradues.utils.SessionManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.example.gradues.ui.login.LoginActivity
+import com.example.gradues.ui.dashboard.docente.GruposActivity
+import com.example.gradues.ui.dashboard.docente.CursosActivity
 
 class DashboardDocenteActivity : AppCompatActivity() {
 
@@ -40,6 +42,17 @@ class DashboardDocenteActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar", null)
                 .show()
+
+
+        }
+
+
+        binding.cardGrupos.setOnClickListener {
+            startActivity(Intent(this, GruposActivity::class.java))
+        }
+
+        binding.cardCursos.setOnClickListener {
+            startActivity(Intent(this, CursosActivity::class.java))
         }
 
         binding.btnCentroTickets.setOnClickListener {

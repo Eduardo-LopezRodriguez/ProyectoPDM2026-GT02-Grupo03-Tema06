@@ -6,7 +6,7 @@ import com.example.gradues.data.entities.OpcionMenu
 class OpcionMenuDao(private val dbHelper: DatabaseHelper) {
 
     fun getOpcionesPorRol(nombreRol: String): List<OpcionMenu> {
-        val lista = mutableListOf<OpcionMenu2>()
+        val lista = mutableListOf<OpcionMenu3>()
         val db = dbHelper.readableDatabase
         val sql = """
             SELECT om.* FROM OpcionesMenu om

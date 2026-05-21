@@ -1,5 +1,6 @@
 package com.example.gradues.ui.Alumno
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gradues.databinding.ActivityDashboardAlumnoBinding
@@ -47,7 +48,14 @@ class DashboardAlumnoActivity : AppCompatActivity() {
         }
 
         binding.btnVerGrupo.setOnClickListener {
-            // TODO Preview: ver grupo
+            // Controla el clic del LinearLayout que actúa como botón
+            binding.btnVerGrupo.setOnClickListener {
+                //Intent para ir de la pantalla actual a la de Detalles del Grupo TGI
+                val intent = Intent(this, DetalleGruposTGIAlumnosActivity::class.java)
+
+                //Iniciar actividad de detallesgrupotgi
+                startActivity(intent)
+            }
         }
 
         binding.btnVerDetallePropuestas.setOnClickListener {
@@ -59,7 +67,14 @@ class DashboardAlumnoActivity : AppCompatActivity() {
         }
 
         binding.btnRegistrarPropuestas.setOnClickListener {
-            // TODO Preview: registrar propuestas
+            // Controla el clic del LinearLayout que actúa como botón
+            binding.btnRegistrarPropuestas.setOnClickListener {
+                //Intent para ir de la pantalla actual a la de Detalles del Grupo TGI
+                val intent = Intent(this, RegistrarPropuestaTGIAlumnoActivity::class.java)
+
+                //Iniciar actividad de detallesgrupotgi
+                startActivity(intent)
+            }
         }
 
         binding.btnNavHome.setOnClickListener {

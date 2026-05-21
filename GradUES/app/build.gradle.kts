@@ -82,4 +82,11 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // - Apartado de Room -
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    // Soporte para Corrutinas
+    implementation("androidx.room:room-ktx:$roomVersion")
+    // Procesador de código
+    ksp("androidx.room:room-compiler:$roomVersion")
 }

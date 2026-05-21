@@ -35,6 +35,15 @@
         <activity
             android:name=".ui.Alumno.DashboardAlumnoActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.Alumno.DetalleGruposTGIAlumnosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Alumno.TesisTGIAlumnoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Alumno.RegistrarPropuestaTGIAlumnoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
-    tools:context=".ui.estudiante.DashboardEstudianteActivity"><!-- Clase que controla la vista-->
+    tools:context=".ui.Alumno.RegistrarPropuestaTGIAlumnoActivity"><!-- Clase que controla la vista-->
 
     <!-- HEADER -->
     <LinearLayout
@@ -333,7 +333,6 @@
                                 <ImageView
                                     android:layout_width="32dp"
                                     android:layout_height="32dp"
-                                    android:src=""
                                     app:srcCompat="@drawable/outline_add_24"
                                     app:tint="#A00000" />
 
@@ -471,7 +470,6 @@
                                 <ImageView
                                     android:layout_width="32dp"
                                     android:layout_height="32dp"
-                                    android:src=""
                                     app:srcCompat="@drawable/outline_add_24"
                                     app:tint="#A00000" />
 

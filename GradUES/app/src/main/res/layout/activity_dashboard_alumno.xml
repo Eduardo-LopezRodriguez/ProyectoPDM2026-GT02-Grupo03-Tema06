@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
-    tools:context=".ui.estudiante.DashboardEstudianteActivity">
+    tools:context=".ui.Alumno.DashboardAlumnoActivity"><!-- Clase que controla la vista-->
 
     <!-- HEADER -->
     <LinearLayout

@@ -35,6 +35,9 @@
         <activity
             android:name=".ui.Alumno.DashboardAlumnoActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.Alumno.DetalleTrabajoAlumnoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

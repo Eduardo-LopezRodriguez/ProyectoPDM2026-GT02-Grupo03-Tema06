@@ -1,479 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4"
-    tools:context=".ui.estudiante.DashboardEstudianteActivity">
+    android:background="#F8F8F8"
+    android:orientation="vertical">
 
-    <!-- HEADER -->
-    <LinearLayout
-        android:id="@+id/headerEstudiante"
-        android:layout_width="0dp"
-        android:layout_height="78dp"
-        android:background="#B40000"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageButton
-            android:id="@+id/btnMenu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Menú"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            app:tint="#FFFFFF" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/btnNotificaciones"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="6dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Notificaciones"
-            android:src="@android:drawable/ic_dialog_info"
-            app:tint="#FFFFFF" />
-
-        <ImageButton
-            android:id="@+id/btnPerfil"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Perfil"
-            android:src="@android:drawable/ic_menu_myplaces"
-            app:tint="#FFFFFF" />
-    </LinearLayout>
-
-    <!-- BOTTOM NAV -->
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="14dp"
-        android:background="@drawable/bg_bottom_nav_dark"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:id="@+id/btnNavHome"
-            android:layout_width="58dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_nav_selected_red"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@android:drawable/ic_menu_view"
-                app:tint="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnNavGrupos"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@android:drawable/ic_menu_myplaces"
-                app:tint="#FFFFFF" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/btnNavPerfil"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@android:drawable/ic_menu_manage"
-                app:tint="#FFFFFF" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- CONTENIDO -->
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollContent"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerEstudiante"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <!-- SALUDO -->
+            <!-- Encabezado rojo -->
             <LinearLayout
-                android:id="@+id/layoutSaludo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_marginBottom="24dp">
-
-                <ImageView
-                    android:id="@+id/ivUsuario"
-                    android:layout_width="62dp"
-                    android:layout_height="62dp"
-                    android:layout_marginEnd="14dp"
-                    android:src="@android:drawable/ic_menu_myplaces"
-                    app:tint="#D32F2F"
-                    android:contentDescription="Usuario" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvSaludo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="¡Hola, Eduardo!"
-                        android:textColor="#1E1E1E"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvCorreo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="lr21008@ues.edu.sv"
-                        android:textColor="#6E6E6E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- TITULO -->
-            <TextView
-                android:id="@+id/tvTituloGrupo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Mi grupo de investigación"
-                android:textColor="#1E1E1E"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <!-- CARD MI GRUPO -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardMiGrupo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="22dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#D8D8D8"
-                app:strokeWidth="1dp">
+                android:layout_height="185dp"
+                android:background="#B71C1C"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="22dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="18dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="0dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:id="@+id/layoutGrupoHeader"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_group_header_red"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="14dp">
-
-                        <ImageView
-                            android:id="@+id/ivEscudoGrupo"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_marginEnd="14dp"
-                            android:src="@drawable/ic_escudo_ues"
-                            android:contentDescription="Escudo" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvNombreGrupo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Grupo de Investigación 01"
-                                android:textColor="#FFFFFF"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/tvTemaGrupo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="Sistema de seguimiento académico"
-                                android:textColor="#FFFFFF"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btnVerGrupo"
-                        android:layout_width="140dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="14dp"
-                        android:layout_marginBottom="14dp"
-                        android:background="@drawable/bg_green_button"
+                    <TextView
+                        android:id="@+id/btnMenu"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="#FFFFFF"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingStart="14dp"
-                        android:paddingEnd="14dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="#111111"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:text="Ver grupo"
-                            android:textColor="#FFFFFF"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- ESTADO DE PROPUESTAS -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardEstadoPropuestas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="22dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#D8D8D8"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <TextView
-                        android:id="@+id/tvTituloEstado"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estado de propuestas"
-                        android:textColor="#1E1E1E"
-                        android:textSize="16sp"
+                        android:text="☰"
+                        android:textColor="#B71C1C"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
-                    <View
-                        android:layout_width="match_parent"
+                    <Space
+                        android:layout_width="0dp"
                         android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#D9D9D9" />
+                        android:layout_weight="1" />
 
                     <TextView
-                        android:id="@+id/tvNombreProyectoEstado"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sistema de seguimiento académico"
-                        android:textColor="#555555"
-                        android:textSize="14sp" />
+                        android:id="@+id/btnNotificaciones"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="#FFFFFF"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="🔔"
+                        android:textColor="#B71C1C"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/btnPerfil"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="#FFFFFF"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="👤"
+                        android:textColor="#B71C1C"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvSaludo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="¡Hola, Alumno!"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="usuario@ues.edu.sv"
+                    android:textColor="#FFCDD2"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Contenido -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <!-- Tarjeta resumen académico -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-38dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="6dp">
 
                     <LinearLayout
-                        android:id="@+id/layoutResumenPropuestas"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="14dp"
-                        android:background="@drawable/bg_gray_summary"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resumen académico"
+                            android:textColor="#B71C1C"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNombreGrupo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Grupo de Investigación 01"
+                            android:textColor="#212121"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTemaGrupo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Sistema de seguimiento académico"
+                            android:textColor="#666666"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btnVerGrupo"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_marginTop="18dp"
+                            android:backgroundTint="#B71C1C"
+                            android:text="Ver grupo"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Tarjeta estado -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estado del trabajo"
+                            android:textColor="#212121"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNombreProyectoEstado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Sistema de seguimiento académico"
+                            android:textColor="#555555"
+                            android:textSize="15sp" />
 
                         <TextView
                             android:id="@+id/tvEstadoResumen"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_marginTop="8dp"
                             android:text="Estado: 1 aprobada, 2 denegadas"
-                            android:textColor="#3A3A3A"
+                            android:textColor="#B71C1C"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <Button
                             android:id="@+id/btnVerDetallePropuestas"
-                            android:layout_width="110dp"
-                            android:layout_height="34dp"
-                            android:background="@drawable/bg_white_outline_button"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:gravity="center"
-                            android:text="Ver detalle"
-                            android:textColor="#333333"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="#FFEBEE"
+                            android:text="Ver detalle de propuestas"
+                            android:textAllCaps="false"
+                            android:textColor="#B71C1C" />
                     </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <!-- NOTAS -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardNotas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="28dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#D8D8D8"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
+                <!-- Tarjeta notas -->
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp">
 
                     <LinearLayout
-                        android:id="@+id/layoutHeaderNotas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:padding="18dp">
 
                         <TextView
-                            android:id="@+id/tvTituloNotas"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Notas por etapas"
-                            android:textColor="#1E1E1E"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/btnAbrirNotas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="›"
-                            android:textColor="#111111"
-                            android:textSize="34sp"
+                            android:text="Notas registradas"
+                            android:textColor="#212121"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvEtapa1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:background="#F5F5F5"
+                            android:padding="12dp"
+                            android:text="Etapa 1: ---"
+                            android:textColor="#212121"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvEtapa2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="#F5F5F5"
+                            android:padding="12dp"
+                            android:text="Etapa 2: ---"
+                            android:textColor="#212121"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvEtapa3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="#F5F5F5"
+                            android:padding="12dp"
+                            android:text="Etapa 3: ---"
+                            android:textColor="#212121"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvEtapa4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="#F5F5F5"
+                            android:padding="12dp"
+                            android:text="Etapa 4: ---"
+                            android:textColor="#212121"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btnAbrirNotas"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="#B71C1C"
+                            android:text="Abrir detalle de notas"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF" />
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="#D9D9D9" />
+                <Button
+                    android:id="@+id/btnRegistrarPropuestas"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="18dp"
+                    android:backgroundTint="#D32F2F"
+                    android:text="Registrar nueva propuesta"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/tvEtapa1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Etapa 1: 8.7"
-                        android:textColor="#5C5C5C"
-                        android:textSize="14sp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp" />
 
-                    <TextView
-                        android:id="@+id/tvEtapa2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Etapa 2: 8.05"
-                        android:textColor="#5C5C5C"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tvEtapa3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Etapa 3: ---"
-                        android:textColor="#5C5C5C"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tvEtapa4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Etapa 4: ---"
-                        android:textColor="#5C5C5C"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- BOTON PRINCIPAL -->
-            <TextView
-                android:id="@+id/btnRegistrarPropuestas"
-                android:layout_width="180dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/bg_red_main_button"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="Registrar propuestas"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Barra inferior blanca con acento rojo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Inicio"
+            android:textColor="#B71C1C"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnNavGrupos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Grupo"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btnNavPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Salir"
+            android:textColor="#B71C1C"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
